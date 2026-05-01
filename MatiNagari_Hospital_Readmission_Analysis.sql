@@ -1,12 +1,28 @@
 /*
-=============================================================
-  Hospital Readmission Data Cleaning & Exploration
-  Author  : Mati Nagari
-  Database: HospitalDB
-  Dataset : Diabetes 130-US Hospitals (1999-2008)
+=============================================================================================
+HOSPITAL READMISSION DATA CLEANING & EXPLORATION
+Author   : Mati Nagari
+Database : HospitalDB
+Dataset  : Diabetes 130-US Hospitals (1999-2008)
+=============================================================================================
 
-  Skills Demonstrated:
-    - Data Cleaning
+EXECUTIVE SUMMARY: 
+Analyzed 101,766 diabetic patient records to identify drivers of 30-day readmissions. 
+The analysis pinpointed high-risk patient profiles, specifically those with 9+ diagnoses 
+and fluctuating insulin requirements, to help hospitals prioritize discharge planning.
+
+BUSINESS PROBLEM: 
+Hospital readmissions are a critical quality metric. High return rates lead to 
+financial penalties and poor patient outcomes. This project provides a structured 
+data layer to identify high-risk patients and reduce preventable returns.
+
+RECOMMENDATIONS: 
+1. Implement "Complexity Flags" for patients with 9+ concurrent diagnoses.
+2. Prioritize follow-up care for patients requiring insulin dosage adjustments during stay.
+3. Focus resource allocation on Cardiology and Emergency departments for discharge support.
+
+SKILLS DEMONSTRATED:
+    - Data Cleaning & ETL
     - CTEs (Common Table Expressions)
     - Temp Tables
     - Window Functions
@@ -15,6 +31,8 @@
     - Creating Views
     - Converting Data Types
     - NULLIF for Safe Division
+=============================================================================================
+*/
 =============================================================
 */
 

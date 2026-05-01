@@ -1,24 +1,34 @@
-Hospital Readmission Analysis (SQL)
-Project Summary
-I analyzed 101,766 diabetic patient records from 130 U.S. hospitals to uncover the key drivers of hospital readmissions. This project covers the complete analytical workflow: cleaning messy clinical data, identifying risk factors, and preparing the data for professional dashboards.
+### Hospital Readmission Analysis (SQL)
+**Industry:** Healthcare / Health Informatics  
+**Target Metric:** 30-Day Readmission Rate
 
-🛠️ What I Did
-Data Cleaning – Cleaned raw clinical data by replacing ? placeholders, removing duplicate records, and dropping columns with excessive missing values.
+---
 
-Feature Engineering – Converted text-based age groups into numeric ranges and created medication categories to make the data dashboard-ready.
+## 1. Executive Summary
+This project analyzes **101,766 diabetic patient records** from 130 US hospitals to identify high-risk drivers of 30-day readmissions. By cleaning clinical EHR data and utilizing advanced SQL techniques like CTEs and Window Functions, I identified that **diagnosis count** and **insulin stability** are the strongest predictors of patient return. The final output is an optimized SQL View ready for stakeholder reporting and BI dashboarding.
 
-Advanced SQL – Used CTEs, Window Functions, and Temp Tables to calculate readmission rates segmented by age, race, and medical specialty.
+## 2. Business Problem
+Hospital readmissions within 30 days are a primary indicator of care quality and a major source of financial penalties under value-based care models. The challenge is identifying high-risk patients *before* they are discharged. This project provides the data layer needed to help clinical teams prioritize follow-up care for the most vulnerable patients.
 
-BI-Ready Output – Packaged the final logic into a SQL View for direct integration with Power BI or Tableau.
+## 3. Skills
+* **SQL (T-SQL):** CTEs, Window Functions, Temp Tables, CASE Statements, NULLIF.
+* **ETL & Data Cleaning:** Handling missing values (`?`), deduplication (ROW_NUMBER), and schema optimization.
+* **Domain Expertise:** Healthcare Informatics, Patient Risk Stratification.
 
-🔍 Key Insights
-Diagnosis Count – Patients with 9 or more diagnoses are significantly more likely to be readmitted within 30 days.
+## 4. Methodology
+* **Data Cleaning:** Replaced non-standard markers, dropped high-null columns (90%+ missing), and filtered for the first encounter per patient to ensure data integrity.
+* **Exploratory Data Analysis (EDA):** Segmented readmission rates across demographics, clinical intensity (medication counts), and hospital stay length.
+* **Visualization Prep:** Created a final **SQL View** with a binary `ReadmittedFlag` for seamless integration with Power BI or Tableau.
 
-Medication Changes – Patients whose insulin dosage was adjusted during their hospital stay showed a higher readmission risk.
+## 5. Results
+* **The Complexity Spike:** Patients with **9 or more diagnoses** show a significant increase in readmission risk compared to those with simpler clinical profiles.
+* **Medication Churn:** Patients whose insulin dosage was adjusted (Up/Down) during their stay had higher return rates than those kept on a steady dosage.
+* **Stay Correlation:** Identified a "U-shaped" risk—both premature discharges and exceptionally long stays (10+ days) correlate with higher 30-day return rates.
 
-Length of Stay – Identified a direct correlation between days spent in the hospital and readmission probability.
+## 6. Business Recommendations
+* **High-Risk Flagging:** Hospitals should implement an automated "Complexity Flag" for any patient with 9+ diagnoses or fluctuating insulin requirements during their stay.
+* **Strategic Resource Allocation:** I advise the clinical team to focus discharge resources on the **Cardiology** and **Emergency** departments, as these showed the highest readmission trends.
+* **Next Steps:** I recommend conducting an A/B test on a "Post-Discharge Follow-up Program" specifically targeting the 9+ diagnosis patient cohort identified in this analysis.
 
-💻 Skills Demonstrated
-SQL (T-SQL) – CTEs, Window Functions, Data Cleaning, ETL, Views
-
-Analytics – Healthcare data trends, patient risk-factor analysis
+---
+*This project demonstrates my ability to take a massive, unorganized healthcare dataset and extract the story hidden in the numbers to drive better business and clinical decisions.*
